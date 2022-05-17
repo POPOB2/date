@@ -71,7 +71,8 @@
     }
 
     //$_GET['month']拿到值之後,要做一個判斷,根據這個參數拿到的值決定上一個月跟下一個月的年份月份
-    //switch($_GET['month']){    $month已有宣告,更改為 switch($month){
+    //但當未帶參數時 switch($_GET['month']) 抓不到資料    
+    //上面已有宣告$month為date('n'), 所以可以更改為switch($month), 這裡只需判斷當月下份為哪一月 再去執行判斷
     switch($month){
 
         case 1:
