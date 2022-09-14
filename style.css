@@ -1,0 +1,155 @@
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+}
+body{
+    background-image: url(./img/Bar2.webp);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    overflow: hidden;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 85% ;
+    height: 1000px;
+    margin: auto;
+    justify-content: start;
+    display: flex;
+}
+.outer_table{
+    width: 1000px;
+    height: 1000px;
+    justify-content: start;
+    display: flex;
+    position: absolute;
+    left: 5%;
+}
+/* =========================== 按鈕頭 =========================== */
+.year_Button,.month_Button{
+    margin-top: 34%;
+    height: 44%;
+    width: 10%;
+    backdrop-filter:blur(2px);
+    display: flex;
+    align-items: center;
+    background-color: rgb(28,28,28,0.3);
+    color: white;
+}
+.month_Button{
+    backdrop-filter:blur(3px);
+    background-color: rgb(28,28,28,0.5);
+}
+.year_Button:hover,.month_Button:hover{
+    background-color: rgb(28,28,28,0.5);
+    color: gray;
+    text-decoration:none;
+}
+.month_Button:hover{
+    background-color: rgb(28,28,28,0.7); 
+}
+/* =========================== 按鈕尾 =========================== */
+
+.starting_point{
+    margin-top:20%;
+    width: 100%;
+    line-height: 200%;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+.starting_point:hover{
+    color: gray;
+}
+.now_datee,.new_datee{
+    width: 100%;
+    line-height: 200%;
+}
+.right_img{
+    width: 35%;
+    height: 100%;
+}
+.week_table{
+    backdrop-filter:blur(5px); 
+    margin: auto;
+    justify-content: center;
+    align-content: start;
+    align-items: center;
+    
+    width:840px;
+    height:1000px;
+    display:flex;
+    flex-wrap:wrap;
+
+    color: white;
+    font-size: 25px;
+    line-height: 120px;
+    text-align: center;
+}
+.today{
+    background-color: rgb(242,132,61,0.3);
+}
+.week_table footer{
+    width:90px;
+    height:90px;
+    border:1px solid #999;
+    box-sizing: border-box;
+    margin-left:-1px;
+    margin-top:-1px;  
+    text-shadow: 3px 3px black;
+    line-height: 90px;
+}
+.week_table footer:hover,.week_table footer:focus{
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(143,217,199);
+    transform: translateY(-15px);
+    transition: 0.5s;
+    border-color: rgb(143,217,199);
+}
+.header,.header_holiday{
+    width:90px;
+    height:45px;
+    line-height: 45px;
+    box-sizing: border-box;
+    margin-left:-1px;
+    margin-top:-1px;
+}
+.header_holiday{
+    background-color: rgb(137,103,235,0.7);
+}
+.weekend{
+background-color: rgb(137,103,235,0.2);
+}
+.month_coffee{
+    position: absolute;
+    right: 5%;
+    height: 96%;
+    text-align: center;
+}
+.st{
+    color: white;
+    width: 300px;
+    font-size: 20PX;
+}
+.st a{
+    color: white;
+}
+.add_cut{
+    text-decoration: none;
+}
+.add_cut:hover{
+    color: #999;
+}
+.coffee{
+    height: 80%;
+    width: 100%;
+    color: white;
+    font-size: 17.5px;
+    text-align: center;
+    backdrop-filter:blur(7px);
+}
+button{
+    border:none;
+    border-radius: 5px;
+}

@@ -5,189 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>線上月曆</title>
+
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        *{
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            margin: 0;
-        }
-        body{
-            /* background-image: url(./img/2.webp); */
-            background-image: url(./img/Bar2.webp);
-            background-size: 100%;
-            /* background-repeat:no-repeat; */
-            background-position: center;
-        }
-        .wrapper{
-            /* border: 1px solid blueviolet; */
-            width: 2000px ;
-            height: 1000px;
-            /* height: 100%; */
-            margin: auto;
-            justify-content: center;
-            display: flex;
-            
-        }
-        .outer_table{
-            /* border: 1px solid lightgreen;      */
-            /* border: 1px solid pink; */
-            width: 90%;
-            height: 100%;
-            justify-content: start;
-            display: flex;
-        }
-        .rightYear,.leftYear{
-            /* border: 1px solid wheat; */
-            height: 100%;
-            backdrop-filter:blur(2px);
-            display: flex;
-            align-items: center;
-            background-color: rgb(28,28,28,0.3);
-        }
-        .rightYear:hover,.leftYear:hover{
-            background-color: rgb(28,28,28,0.5);
-        }
-        .rightMonth,.leftMonth{
-            /* border: 1px solid wheat; */
-            height: 100%;
-            backdrop-filter:blur(3px);
-            display: flex;
-            align-items: center;
-            background-color: rgb(28,28,28,0.5);
-        }
-        .rightMonth:hover,.leftMonth:hover{
-            background-color: rgb(28,28,28,0.7); 
-        }
-        .rightMonth a,.leftMonth a,.rightYear a,.leftYear a{
-            text-decoration: none;
-            color: white;
-            align-content: center;
-            justify-content: center;
-        }
-        .rightMonth a:hover,.leftMonth a:hover,.rightYear a:hover,.leftYear a:hover{
-            color: gray;
 
-        }
-        .starting_point{
-            /* border: 1px solid orangered; */
-            margin-top:10px ;
-            width: 100%;
-            line-height: 200%;
-            color: white;
-            text-decoration: none;
-            font-size: 30px;
-        }
-        .starting_point:hover{
-            color: gray;
-        }
-        .now_datee{
-            /* border: 1px solid orangered; */
-            width: 100%;
-            line-height: 200%;
-        }
-        .new_datee{
-            /* border: 1px solid orangered; */
-            width: 100%;
-            line-height: 200%;
-        }
-        .right_img{
-            /* border: 1px solid orangered; */
-            width: 35%;
-            height: 100%;
-        }
-        .week_table{
-            /* border:1px solid red; */
-            backdrop-filter:blur(5px);
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-            margin: auto;
-            align-content:center;
-            justify-content: center;
-            align-content: start;
-            align-items: center;
-            
-            width:840px;
-            height:1000px;
-            display:flex;
-            flex-wrap:wrap;
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
 
-            color: white;
-            font-size: 25px;
-            line-height: 120px;
-            text-align: center;
-        }
-        .today{
-            background-color: rgb(242,132,61,0.3);
-            
-        }
-        .week_table footer{
-            width:120px;
-            height:120px;
-            border:1px solid #999;
-            box-sizing: border-box;
-            margin-left:-1px;
-            margin-top:-1px;  
-            text-shadow: 3px 3px black;
-        }
-        .week_table footer:hover,.week_table footer:focus{
-            box-shadow: 0 0.5em 0.5em -0.4em rgb(143,217,199);
-            transform: translateY(-15px);
-            transition: 0.5s;
-            border-color: rgb(143,217,199);
-            /* color: red; */
-        }
-        .header{
-            /* border:1px solid #999; */
-            width:120px;
-            height:120px;
-            box-sizing: border-box;
-            margin-left:-1px;
-            margin-top:-1px;
-        }
-        .header_holiday{
-            /* border:1px solid #999; */
-            width: 120px;
-            height: 45px;
-            background-color: rgb(137,103,235,0.7);
-            color: white;
-            line-height: 45px;
-        }
-        .weekend{
-        background-color: rgb(137,103,235,0.2);
-        }
-        .month_coffee{
-            border: 1px solid white;
-            text-align: center;
-        }
-        .st{
-            color: white;
-            width: 300px;
-            font-size: 20PX;
-        }
-        .st a{
-            color: white;
-        }
-        .add_cut{
-            text-decoration: none;
-        }
-        .add_cut:hover{
-            color: #999;
-        }
-        .coffee{
-            color: white;
-            /* border: 1px solid white; */
-            font-size: 17.5px;
-            text-align: center;
-            /* border: 1px solid orangered; */
-            height: 85%;
-            width: 100%;
-            backdrop-filter:blur(7px);
-        }
-        
-        
-        
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
+    </script>
+
 </head>
+
 <body>
+    <!-- <div class="container"> -->
+    <div class=".container-fluid">
     <!-- 設定整個框架的寬度 -->
     <div class="wrapper">
 
@@ -292,12 +132,15 @@ if(empty($_GET['year'])||($_GET['month'])){
 
 <!-- 月曆主體 outer_table -->
 <div class="outer_table">
-    <div class="leftYear">
-        <a href="index.php?year=<?=($_GET['year']-1)?>&month=<?=$_GET['month'];?>"><i class="fa-solid fa-angles-left"></i>上一年</a>
-    </div>
-    <div class="leftMonth">
-        <a href="index.php?year=<?=$prevYear?>&month=<?=$prevMonth;?>">&nbsp;&nbsp;<i class="fa-solid fa-angle-left"></i> 上一月</a>
-    </div>
+
+        <a href="index.php?year=<?=($_GET['year']-1)?>&month=<?=$_GET['month'];?>" class="year_Button">
+            <i class="fa-solid fa-angles-left"></i>上一年
+        </a>
+
+        <a href="index.php?year=<?=$prevYear?>&month=<?=$prevMonth;?>" class="month_Button">
+            <i class="fa-solid fa-angle-left"></i>上一月
+        </a>
+
     <!-- 月曆 周與日 week_table -->
     <div class="week_table">
         <a class="starting_point" href="index.php"><i class="fa-solid fa-clock-rotate-left"></i> 回到現在</a>
@@ -328,13 +171,15 @@ foreach($dateHouse as $k => $day){
 ?>
 
 </div><!-- 月曆 周與日 week_table 的句尾 -->
-<div class="rightMonth">
-    <a href="index.php?year=<?=$nexYear?>&month=<?=$nextMonth;?>">下一月 <i class="fa-solid fa-angle-right"></i>&nbsp;&nbsp;</a>
-</div>
-<div class="rightYear">
-    <a href="index.php?year=<?=($_GET['year']+1);?>&month=<?=$_GET['month'];?>">下一年<i class="fa-solid fa-angles-right"></i></a>
-</div>
-<div class="right_img"></div>
+
+        <a href="index.php?year=<?=$nexYear?>&month=<?=$nextMonth;?>" class="month_Button">
+            下一月 <i class="fa-solid fa-angle-right"></i>
+        </a>
+
+        <a href="index.php?year=<?=($_GET['year']+1);?>&month=<?=$_GET['month'];?>" class="year_Button">
+            下一年<i class="fa-solid fa-angles-right"></i>
+        </a>
+
 </div><!-- 月曆主體 outer_table 的句尾 -->
 
 
@@ -674,10 +519,9 @@ switch($month){
 ?>
 
 </div>
-</div><!--  wrapper 的句尾  -->
 
 
-
-
+<!--  wrapper 的句尾  -->
+</div> 
 </body>
 </html>
